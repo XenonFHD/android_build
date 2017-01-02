@@ -134,7 +134,7 @@ function check_product()
 
     if (echo -n $1 | grep -q -e "^xenonhd_") ; then
        XENONHD_BUILD=$(echo -n $1 | sed -e 's/^xenonhd_//g')
-       export BUILD_NUMBER=$((date +%s%N ; echo $XENONHD_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10)
+       export BUILD_NUMBER=$( (date +%s%N ; echo $XENONHD_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
     else
        XENONHD_BUILD=
     fi
