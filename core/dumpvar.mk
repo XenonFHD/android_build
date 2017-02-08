@@ -15,12 +15,13 @@ print_build_config_vars := \
   HOST_OS_EXTRA \
   OUT_DIR
 
-ifneq (,$(filter true, $(CYNGN_TARGET) $(EXTERNAL_CLEAN_TARGET)))
-ifeq ($(CYNGN_TARGET),true)
+ifeq ($(WITH_SU),true)
 print_build_config_vars += \
-  CYNGN_TARGET \
-  CYNGN_FEATURES
+  WITH_SU
 endif
+ifeq ($(WITH_GMS),true)
+print_build_config_vars += \
+  WITH_GMS
 endif
 
 ifeq ($(TARGET_BUILD_PDK),true)
