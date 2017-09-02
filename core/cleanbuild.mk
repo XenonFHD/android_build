@@ -208,6 +208,7 @@ current_build_config :=
 # otherwise we'd have to rebuild any generated files created with those
 # tools.
 installclean_files := \
+	$(ANDROID_BUILD_TOP)/ota_conf \
 	$(HOST_OUT)/obj/NOTICE_FILES \
 	$(HOST_OUT)/obj/PACKAGING \
 	$(HOST_OUT)/coverage \
