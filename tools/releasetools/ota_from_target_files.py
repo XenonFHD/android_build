@@ -471,6 +471,19 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 
+  script.Print("                                              ")
+  script.Print("**********************************************")
+  script.Print("   __  __                      _   _ ____     ")
+  script.Print("   \ \/ /___ _ __   ___  _ __ | | | |  _ \    ")
+  script.Print("    \  // _ \ '_ \ / _ \| '_ \| |_| | | | |   ")
+  script.Print("    /  \  __/ | | | (_) | | | |  _  | |_| |   ")
+  script.Print("   /_/\_\___|_| |_|\___/|_| |_|_| |_|____/    ")
+  script.Print("                                              ")
+  script.Print("               www.xenonhd.com                ")
+  script.Print("                                              ")
+  script.Print("**********************************************")
+  script.Print("                                              ")
+
   system_progress = 0.75
 
   if OPTIONS.wipe_user_data:
