@@ -223,8 +223,10 @@ installclean_files := \
 	$(HOST_CROSS_OUT)/nativetest* \
 	$(PRODUCT_OUT)/*.img \
 	$(PRODUCT_OUT)/*.ini \
+	$(PRODUCT_OUT)/*.md5sum \
 	$(PRODUCT_OUT)/*.txt \
 	$(PRODUCT_OUT)/*.xlb \
+	$(PRODUCT_OUT)/*.xml \
 	$(PRODUCT_OUT)/*.zip \
 	$(PRODUCT_OUT)/kernel \
 	$(PRODUCT_OUT)/data \
