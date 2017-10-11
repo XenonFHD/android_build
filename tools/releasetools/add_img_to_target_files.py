@@ -349,8 +349,6 @@ def AddUserdataExtra(output_zip):
 
   extra_name = image_props.get("partition_name", "extra")
 
-  print "creating userdata_%s.img..." % extra_name
-
   # The name of the directory it is making an image out of matters to
   # mkyaffs2image.  So we create a temp dir, and within it we create an
   # empty dir named "data", and build the image from that.
