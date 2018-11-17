@@ -467,7 +467,7 @@ def RewriteProps(data):
         assert len(pieces) == 5
         pieces[-1] = EditTags(pieces[-1])
         value = " ".join(pieces)
-      elif key == "ro.build.tags":
+      elif key in ("ro.build.tags", "ro.vendor.build.tags"):
         value = EditTags(value)
       elif key == "ro.build.display.id":
         # change, eg, "JWR66N dev-keys" to "JWR66N"
