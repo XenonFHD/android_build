@@ -39,10 +39,22 @@ import sparse_img
 
 class Options(object):
   def __init__(self):
-    platform_search_path = {
-        "linux2": "out/host/linux-x86",
-        "darwin": "out/host/darwin-x86",
-    }
+    try: # use OUT_DIR if exported
+      custom_out = os.environ['OUT_DIR']
+
+      if custom_out == '': # don't continue, raise KeyError instead
+        raise KeyError
+
+      platform_search_path = {
+          "linux2": custom_out + "/host/linux-x86",
+          "darwin": custom_out + "/host/darwin-x86",
+      }
+
+    except KeyError: # use default $(gettop)/out
+      platform_search_path = {
+          "linux2": "out/host/linux-x86",
+          "darwin": "out/host/darwin-x86",
+      }
 
     self.search_path = platform_search_path.get(sys.platform, None)
     self.signapk_path = "framework/signapk.jar"  # Relative to search_path
